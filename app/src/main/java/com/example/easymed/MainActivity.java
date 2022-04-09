@@ -1,6 +1,7 @@
 package com.example.easymed;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +15,15 @@ public class MainActivity extends AppCompatActivity {
 
     Button create_btn, logout_btn, delete_btn, edit_btn, personal_info_btn,view_btn;
 
+    private AppDatabase db;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initDB();
 
         create_btn = findViewById(R.id.create_app_btn);
         edit_btn = findViewById(R.id.edit_app_btn);
@@ -66,8 +72,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
+    }
+    private void initDB(){
+        db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "my_database")
+                .fallbackToDestructiveMigration()
+                .build();
     }
 }

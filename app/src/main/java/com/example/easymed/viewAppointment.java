@@ -14,6 +14,7 @@ public class viewAppointment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_appointment);
 
+        //Goes back to main activity
         back = findViewById(R.id.back_btn_view);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,5 +23,7 @@ public class viewAppointment extends AppCompatActivity {
                 startActivity(intent_back);
             }
         });
+
+        //PULL FROM DATABASE AND ADD CURRENT APPS TO CALENDAR
     }
 }
