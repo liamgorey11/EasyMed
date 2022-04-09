@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyMed">
         <activity
+<<<<<<< Updated upstream
             android:name=".ViewAppointment"
+=======
+            android:name=".viewAppointment"
+>>>>>>> Stashed changes
             android:exported="false" />
         <activity
             android:name=".personal_info"

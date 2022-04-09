@@ -12,7 +12,7 @@ Should handle appointment creation logic
  */
 public class MainActivity extends AppCompatActivity {
 
-    Button create_btn, logout_btn, delete_btn, edit_btn, personal_info_btn;
+    Button create_btn, logout_btn, delete_btn, edit_btn, personal_info_btn,view_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         edit_btn = findViewById(R.id.edit_app_btn);
         logout_btn = findViewById(R.id.logout_btn);
         personal_info_btn = findViewById(R.id.personal_info_btn);
+        view_btn = findViewById(R.id.view_app_btn);
 
         create_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent_add);
             }
         });
+        view_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_view = new Intent(MainActivity.this, viewAppointment.class);
+                startActivity(intent_view);
+            }
+        });
 
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 finish(); //exits app
             }
         });
+
+
 
 
     }
