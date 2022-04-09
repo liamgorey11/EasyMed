@@ -12,7 +12,7 @@ Should handle appointment creation logic
  */
 public class MainActivity extends AppCompatActivity {
 
-    Button create_btn, logout_btn, delete_btn, edit_btn, personal_info_btn;
+    Button create_btn, logout_btn, edit_btn, personal_info_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         create_btn = findViewById(R.id.create_app_btn);
-        delete_btn = findViewById(R.id.delete_app_btn);
         edit_btn = findViewById(R.id.edit_app_btn);
         logout_btn = findViewById(R.id.logout_btn);
         personal_info_btn = findViewById(R.id.personal_info_btn);
@@ -29,16 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent_add = new Intent(MainActivity.this, createAppointment.class);
-                startActivity(intent_add);
-            }
-        });
-
-        delete_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent_add = new Intent(MainActivity.this, delete_appointment.class);
+                Intent intent_add = new Intent(MainActivity.this, createAppointmentActivity.class);
                 startActivity(intent_add);
             }
         });
@@ -47,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent_add = new Intent(MainActivity.this, edit_appointment.class);
+                Intent intent_add = new Intent(MainActivity.this, edit_appointmentActivity.class);
                 startActivity(intent_add);
             }
         });
@@ -56,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent_add = new Intent(MainActivity.this, personal_info.class);
+                Intent intent_add = new Intent(MainActivity.this, personal_infoActivity.class);
                 startActivity(intent_add);
             }
         });

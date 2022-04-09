@@ -8,14 +8,14 @@
     android:layout_marginTop="100dp"
     android:layout_marginRight="30dp"
     android:orientation="vertical"
-    tools:context=".createAppointmentActivity">
+    tools:context=".loginActivity">
 
     <TextView
-        android:layout_width="224dp"
+        android:layout_width="69dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:text="Create Appointment"
+        android:text="Login"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.027" />
 
     <EditText
-        android:id="@+id/editText_location"
+        android:id="@+id/editText_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -34,12 +34,12 @@
         android:layout_marginRight="30dp"
         android:height="45dp"
         android:ems="10"
-        android:hint="location"
+        android:hint="Username"
         android:inputType="textPersonName"
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/editText_doctor"
+        android:id="@+id/editText_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -48,45 +48,26 @@
         android:layout_marginRight="30dp"
         android:height="45dp"
         android:ems="10"
-        android:hint="doctor"
-        android:inputType="textPersonName"
-        android:minHeight="48dp" />
-
-    <EditText
-        android:id="@+id/editText_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:height="45dp"
-        android:ems="10"
-        android:hint="date"
-        android:inputType="textPersonName"
-        android:minHeight="48dp" />
-
-    <EditText
-        android:id="@+id/editText_time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:height="45dp"
-        android:ems="10"
-        android:hint="time"
+        android:hint="Password"
         android:inputType="textPersonName"
         android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/submit_btn"
+        android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
-        android:text="create" />
+        android:text="Login" />
+
+    <Button
+        android:id="@+id/signup_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="75dp"
+        android:text="Sign Up" />
 
 </LinearLayout>

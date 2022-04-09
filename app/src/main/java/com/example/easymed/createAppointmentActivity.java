@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class createAppointment extends AppCompatActivity {
+public class createAppointmentActivity extends AppCompatActivity {
 
     EditText et_location;
     EditText et_doctor;
@@ -38,7 +38,7 @@ public class createAppointment extends AppCompatActivity {
                 String t = et_time.getText().toString();
 
 
-                Intent intent_add = new Intent(createAppointment.this, MainActivity.class);
+                Intent intent_add = new Intent(createAppointmentActivity.this, MainActivity.class);
                 intent_add.putExtra("location", "" + l);
                 intent_add.putExtra("doctor", "" + doc);
                 intent_add.putExtra("date", "" + d);
