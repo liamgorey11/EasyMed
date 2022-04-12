@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Delete items in database
+
                 finish(); //exits app
             }
         });

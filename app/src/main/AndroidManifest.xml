@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyMed">
         <activity
-            android:name=".listingAppointmentsActivity"
-            android:exported="false" />
-        <activity
             android:name=".viewAppointment"
             android:exported="false" />
         <activity

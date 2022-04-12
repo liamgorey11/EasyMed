@@ -9,7 +9,7 @@
     android:layout_marginTop="100dp"
     android:layout_marginRight="30dp"
     android:orientation="vertical"
-    tools:context=".listingAppointmentsActivity">
+    tools:context=".calendarActivity">
 
     <TextView
         android:layout_width="98dp"

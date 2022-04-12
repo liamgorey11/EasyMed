@@ -47,7 +47,6 @@ public class createAppointmentActivity extends AppCompatActivity {
                 String d = et_date.getText().toString();
                 String t = et_time.getText().toString();
 
-
                 Intent intent_add = new Intent(createAppointmentActivity.this, MainActivity.class);
                 intent_add.putExtra("location", "" + l);
                 intent_add.putExtra("doctor", "" + doc);
@@ -72,6 +71,7 @@ public class createAppointmentActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }

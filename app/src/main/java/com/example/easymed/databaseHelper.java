@@ -73,9 +73,10 @@ public class databaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //gets all data from APPT table Created in createAppoinmentActivity.java
     public Cursor getDataAppt(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM " +TABLE_NAME2,null);
-        return res;
+        Cursor apptData = db.rawQuery("SELECT * FROM " +TABLE_NAME2,null);
+        return apptData;
     }
 }
