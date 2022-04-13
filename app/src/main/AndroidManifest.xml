@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.easymed">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyMed">
         <activity
-            android:name=".viewAppointment"
+            android:name=".signupActivity"
             android:exported="false" />
         <activity
-            android:name=".loginActivity"
+            android:name=".listingAppointmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAppointment"
             android:exported="false" />
         <activity
             android:name=".personal_infoActivity"
@@ -26,6 +31,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".loginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
