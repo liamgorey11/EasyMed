@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linear_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="30dp"
-    android:layout_marginTop="100dp"
-    android:layout_marginRight="30dp"
-    android:orientation="vertical"
-    tools:context=".calendarActivity">
+        android:layout_height="match_parent">
+
 
     <TextView
+        android:id="@+id/app_tv"
         android:layout_width="98dp"
         android:layout_height="39dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:text="EasyMed"
+        android:text="Appointments"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -25,57 +22,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.027" />
 
-    <Button
-        android:id="@+id/create_app_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="8dp"
-        android:text="Create Appointment" />
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/appointmentRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/edit_app_btn"
+        android:id="@+id/home_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="8dp"
-        android:text="Edit Appointment" />
+        android:text="Home"
+        app:layout_constraintBottom_toTopOf="@+id/appointmentRV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/delete_app_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="Delete Appointment" />
-
-    <Button
-        android:id="@+id/personal_info_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="Edit Personal Info" />
-
-    <Button
-        android:id="@+id/logout_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="Logout" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
