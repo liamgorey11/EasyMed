@@ -21,4 +21,60 @@ public class Appointment {
         this.date = d;
         this.time = t;
     }
+
+    //getter
+
+    public Patient getPatient()
+    {
+        return this.patient;
+    }
+
+    public Doctor getDoctor()
+    {
+        return this.doctor;
+    }
+
+    public String getLocation()
+    {
+        return this.location;
+    }
+
+    public Date getDate()
+    {
+        return this.date;
+    }
+
+    public Time getTime()
+    {
+        return this.time;
+    }
+
+    //setter
+
+    public void setPatient(Patient p)
+    {
+        this.patient = p;
+    }
+
+
+    public void setDoctor(Doctor d)
+    {
+        this.doctor = d;
+    }
+
+    public void setLocation(String l)
+    {
+        this.location = l;
+    }
+
+    public void setDate(Date d)
+    {
+        this.date = d;
+    }
+    public void setTime(Time t)
+    {
+        this.time = t;
+    }
+
+
 }

@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        create_btn = findViewById(R.id.create_app_btn);
+        create_btn = findViewById(R.id.cv_edit_btn);
         edit_btn = findViewById(R.id.edit_app_btn);
-        logout_btn = findViewById(R.id.logout_btn);
+        logout_btn = findViewById(R.id.home_btn);
         personal_info_btn = findViewById(R.id.personal_info_btn);
         view_btn = findViewById(R.id.view_app_btn);
 
