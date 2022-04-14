@@ -36,24 +36,14 @@
         android:text="Create Appointment" />
 
     <Button
-        android:id="@+id/edit_app_btn"
+        android:id="@+id/view_app_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
-        android:text="Edit Appointment" />
-
-    <Button
-        android:id="@+id/delete_app_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="Delete Appointment" />
+        android:text="View Appointments" />
 
     <Button
         android:id="@+id/personal_info_btn"
@@ -64,16 +54,6 @@
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
         android:text="Edit Personal Info" />
-
-    <Button
-        android:id="@+id/view_app_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="View Appointments" />
 
     <Button
         android:id="@+id/logout_btn"

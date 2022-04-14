@@ -14,7 +14,7 @@ Should handle appointment creation logic
  */
 public class MainActivity extends AppCompatActivity {
 
-    Button create_btn, logout_btn, delete_btn, edit_btn, personal_info_btn,view_btn;
+    Button create_btn, logout_btn, personal_info_btn,view_btn;
 
     private AppDatabase db;
     String username = "";
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         create_btn = findViewById(R.id.create_app_btn);
-        edit_btn = findViewById(R.id.edit_app_btn);
         logout_btn = findViewById(R.id.logout_btn);
         personal_info_btn = findViewById(R.id.personal_info_btn);
         view_btn = findViewById(R.id.view_app_btn);
@@ -47,15 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent_add = new Intent(MainActivity.this, createAppointmentActivity.class);
                 intent_add.putExtra("username", username);
-                startActivity(intent_add);
-            }
-        });
-
-        edit_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent_add = new Intent(MainActivity.this, edit_appointmentActivity.class);
                 startActivity(intent_add);
             }
         });

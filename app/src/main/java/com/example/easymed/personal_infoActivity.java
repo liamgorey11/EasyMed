@@ -156,14 +156,6 @@ public class personal_infoActivity extends AppCompatActivity {
                         }
 
                         else{
-                            // Define a projection that specifies which columns from the database
-                            // you will actually use after this query.
-                            String[] projection = {
-                                    BaseColumns._ID,
-                                    FeedReaderContract.FeedEntry.COLUMN_NAME_USERNAME,
-                                    FeedReaderContract.FeedEntry.COLUMN_NAME_PASSWORD
-                            };
-
                             // Filter results WHERE "title" = 'My Title'
                             String selection = FeedReaderContract.FeedEntry.COLUMN_NAME_USERNAME + " = ?";
                             String[] selectionArgs = new String[]{username};

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyMed">
         <activity
+            android:name=".editAppointmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".signupActivity"
             android:exported="false" />
         <activity
@@ -24,14 +27,11 @@
             android:name=".personal_infoActivity"
             android:exported="false" />
         <activity
-            android:name=".edit_appointmentActivity"
-            android:exported="false" />
-        <activity
             android:name=".createAppointmentActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".loginActivity"
             android:exported="true">
