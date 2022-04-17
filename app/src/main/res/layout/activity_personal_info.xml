@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#11CFC9"
     tools:context=".personal_infoActivity">
 
     <LinearLayout
@@ -21,9 +22,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/teko"
             android:gravity="center"
             android:text="Edit Information"
-            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -109,7 +112,10 @@
         android:layout_height="62dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
-        android:text="Commit"
+        android:backgroundTint="#4CAF50"
+        android:fontFamily="@font/teko"
+        android:text="Update"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -119,7 +125,10 @@
         android:layout_height="62dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="40dp"
+        android:backgroundTint="#A61111"
+        android:fontFamily="@font/teko"
         android:text="Back"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

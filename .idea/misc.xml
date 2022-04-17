@@ -10,6 +10,16 @@
         <entry key="..\:/Users/hotwi/AndroidStudioProjects/EasyMed/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/hotwi/AndroidStudioProjects/EasyMed/app/src/main/res/layout/activity_personal_info.xml" value="0.33" />
         <entry key="..\:/Users/hotwi/AndroidStudioProjects/EasyMed/app/src/main/res/layout/activity_view_appointment.xml" value="0.4" />
+        <entry key="app/src/main/res/drawable/easyMed_logo_background.xml" value="0.1305" />
+        <entry key="app/src/main/res/layout/activity_create_appointment.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/activity_edit_appointment.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/activity_listing_appointments.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/activity_personal_info.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/activity_view_appointment.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/card_layout.xml" value="0.16960753930738273" />
       </map>
     </option>
   </component>
