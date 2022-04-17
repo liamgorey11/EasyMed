@@ -12,6 +12,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="#2196F3"
         app:cardCornerRadius="12dp"
         app:cardElevation="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,8 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/purple_200">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView_Location"
@@ -50,8 +50,10 @@
                 android:layout_marginStart="123dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="170dp"
-                android:text="appointment"
-                android:textSize="20sp"
+                android:fontFamily="@font/teko"
+                android:text="Appointment"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -72,7 +74,11 @@
                 android:layout_height="36dp"
                 android:layout_marginStart="44dp"
                 android:layout_marginBottom="16dp"
+                android:backgroundTint="#4CAF50"
+                android:fontFamily="@font/teko"
                 android:text="Edit"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -82,7 +88,11 @@
                 android:layout_height="36dp"
                 android:layout_marginEnd="43dp"
                 android:layout_marginBottom="16dp"
+                android:backgroundTint="#A61111"
+                android:fontFamily="@font/teko"
                 android:text="Delete"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.94"
