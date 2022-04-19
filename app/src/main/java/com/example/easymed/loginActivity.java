@@ -29,7 +29,8 @@ import java.util.concurrent.Executors;
 public class loginActivity extends AppCompatActivity {
 
     Button login_btn, signup_btn;
-    EditText et_username, et_password;
+    EditText et_username;
+    EditText et_password;
     FeedReaderDbHelper dbHelper;
 
 

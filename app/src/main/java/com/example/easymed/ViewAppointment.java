@@ -21,7 +21,6 @@ public class ViewAppointment extends AppCompatActivity {
 
     RecyclerView recyclerView;
     Button back;
-
     RecyclerAdapter adapter;
     String username;
     FeedReaderAppointmentsDbHelper dbAppointmentsHelper;

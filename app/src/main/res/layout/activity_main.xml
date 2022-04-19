@@ -11,8 +11,7 @@
     <ImageView
         android:id="@+id/imageView_logo"
         android:layout_width="match_parent"
-        android:layout_height="196dp"
-        app:srcCompat="@mipmap/easyMed_logo_foreground" />
+        android:layout_height="196dp" />
 
     <LinearLayout
         android:id="@+id/linear_layout"
