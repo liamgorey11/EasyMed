@@ -14,45 +14,58 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:srcCompat="@drawable/easymed_logo" />
-
+    
     <Button
-        android:id="@+id/create_app_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="8dp"
-        android:text="Create Appointment" />
+            android:id="@+id/create_app_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="#1436DD"
+            android:fontFamily="@font/teko"
+            android:text="Create Appointment"
+            android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/view_app_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="View Appointments" />
+        <Button
+            android:id="@+id/view_app_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="#2196F3"
+            android:fontFamily="@font/teko"
+            android:text="View Appointments"
+            android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/personal_info_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="Edit Personal Info" />
+        <Button
+            android:id="@+id/personal_info_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="#009688"
+            android:fontFamily="@font/teko"
+            android:text="Edit Personal Info"
+            android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/logout_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:text="Logout" />
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="#A61111"
+            android:fontFamily="@font/teko"
+            android:text="Logout"
+            android:textSize="20sp" />
+
 
 </LinearLayout>
