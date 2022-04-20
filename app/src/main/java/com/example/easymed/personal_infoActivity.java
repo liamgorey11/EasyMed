@@ -126,21 +126,7 @@ public class personal_infoActivity extends AppCompatActivity {
                         }
                         cursor.close();
 
-                        int flag = 0; //flag to check if the user changed their username, if the username is already in use
-                        for (int i = 0; i < usernames.size(); i++) {
-                            Log.d("usernames: ", usernames.get(i).toString());
-                            if (usernames.get(i).toString().equals(et_username.getText().toString()) && !usernames.get(i).toString().equals(username)) { //if we search the db and find a user who has the same username, increment flag
-                                flag++;
-                            }
-                        }
-                        if(flag != 0){ //flag will be 0 if the username is unique
-                            personal_infoActivity.this.runOnUiThread(new Runnable() {
-                                public void run() {
-                                    Toast.makeText(personal_infoActivity.this, "Username already in use", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                        }
-                        else if(!temp.isEmpty()){ //check for more specific criteria like length of password/username
+                        if(!temp.isEmpty()){ //check for more specific criteria like length of password/username
                             personal_infoActivity.this.runOnUiThread(new Runnable() {
                                 public void run() {
                                     Toast.makeText(personal_infoActivity.this, loginCriteria(et_username.getText().toString(), et_password.getText().toString()), Toast.LENGTH_SHORT).show();
@@ -156,62 +142,13 @@ public class personal_infoActivity extends AppCompatActivity {
                         }
 
                         else{
-                            // Filter results WHERE "title" = 'My Title'
-                            String selection = FeedReaderContract.FeedEntry.COLUMN_NAME_USERNAME + " = ?";
-                            String[] selectionArgs = new String[]{username};
-
-                            ContentValues values = new ContentValues();
-                            values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_USERNAME, et_username.getText().toString());
-                            values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_PASSWORD, et_password.getText().toString());
-                            values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_FIRSTNAME, et_firstname.getText().toString());
-                            values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_LASTNAME, et_lastname.getText().toString());
-                            values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_AGE, et_age.getText().toString());
-                            values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_HEALTHCARD, et_healthcard.getText().toString());
-                            values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_ADDRESS, et_address.getText().toString());
-
-
-
-                            int count = db.update(
-                                    FeedReaderContract.FeedEntry.TABLE_NAME,
-                                    values,
-                                    selection,
-                                    selectionArgs
-                            );
-                            username = et_username.getText().toString(); //We don't know if the user typed in a new username but we update the global variable in case. If the username was not changed then this line does nothing.
+                            dbHelper.editValue(username, et_password.getText().toString(), et_firstname.getText().toString(), et_lastname.getText().toString(), et_age.getText().toString(), et_healthcard.getText().toString(), et_address.getText().toString());
                             personal_infoActivity.this.runOnUiThread(new Runnable() {
                                 public void run() {
-                                    Toast.makeText(personal_infoActivity.this, "success: "+count+" rows changed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(personal_infoActivity.this, "success:  rows changed", Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
-
-                        cursor = db.query(
-                                "entry",   // The table to query
-                                null,             // The array of columns to return (pass null to get all)
-                                null,              // The columns for the WHERE clause
-                                null,          // The values for the WHERE clause
-                                null,                   // don't group the rows
-                                null,                   // don't filter by row groups
-                                null               // The sort order
-                        );
-
-
-
-                        while (cursor.moveToNext()) {
-                            List profile = new ArrayList<>();
-                            String user = cursor.getString(1);
-                            String pass = cursor.getString(2);
-                            String first = cursor.getString(3);
-                            String last = cursor.getString(4);
-                            profile.add(user);
-                            profile.add(pass);
-                            profile.add(first);
-                            profile.add(last);
-                            //Log.d("Usernames: ", String.valueOf(cursor.getColumnIndexOrThrow(FeedReaderContract.FeedEntry.COLUMN_NAME_USERNAME)));
-                            //test.add(name);
-                            Log.d("profile: ", profile.toString());
-                        }
-                        cursor.close();
 
                         //deleteRow(new String[]{String.valueOf(et_username.getText().toString())}, db);
                         //clearTable(db);

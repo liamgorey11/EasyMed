@@ -48,25 +48,11 @@ public class signupActivity extends AppCompatActivity {
                   Runnable objRunnable = new Runnable() {
                       @Override
                       public void run() {
-                          SQLiteDatabase db = dbHelper.getReadableDatabase();
+                          SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-                          // Define a projection that specifies which columns from the database
-                          // you will actually use after this query.
-                          String[] projection = {
-                                  BaseColumns._ID,
-                                  FeedReaderContract.FeedEntry.COLUMN_NAME_USERNAME,
-                                  FeedReaderContract.FeedEntry.COLUMN_NAME_PASSWORD
-                          };
-
-                          // Filter results WHERE "title" = 'My Title'
-                          String selection = FeedReaderContract.FeedEntry.COLUMN_NAME_USERNAME + " = ?";
-                          String[] selectionArgs = {"username"};
-
-                          // How you want the results sorted in the resulting Cursor
-                          String sortOrder = FeedReaderContract.FeedEntry.COLUMN_NAME_PASSWORD + " DESC";
-
+                          //Do a db query across all users to retrieve all usernames
                           Cursor cursor = db.query(
-                                  "entry",   // The table to query
+                                  FeedReaderContract.FeedEntry.TABLE_NAME,   // The table to query
                                   null,             // The array of columns to return (pass null to get all)
                                   null,              // The columns for the WHERE clause
                                   null,          // The values for the WHERE clause
@@ -89,7 +75,6 @@ public class signupActivity extends AppCompatActivity {
                               Log.d("usernames: ", usernames.get(i).toString());
                               if (usernames.get(i).toString().equals(et_username.getText().toString())) { //if we search the db and find a user who has the same username, increment flag
                                   flag++;
-                                  Log.d("AAA: ", "FLAG");
                               }
                           }
                           if(flag != 0){ //flag will be 0 if the username is unique
@@ -114,33 +99,12 @@ public class signupActivity extends AppCompatActivity {
                               });
                           }
                           else{
-                              ContentValues values = new ContentValues();
-                              values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_USERNAME, et_username.getText().toString());
-                              values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_PASSWORD, et_password.getText().toString());
-                              values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_FIRSTNAME, et_firstname.getText().toString());
-                              values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_LASTNAME, et_lastname.getText().toString());
-                              values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_AGE, et_age.getText().toString());
-                              values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_HEALTHCARD, et_healthcard.getText().toString());
-                              values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_ADDRESS, et_address.getText().toString());
-                              db.insert(FeedReaderContract.FeedEntry.TABLE_NAME, null, values);
-                              Log.d("Insert: ", "Inserted new row");
-
+                              dbHelper.addValue(et_username.getText().toString(), et_password.getText().toString(), et_firstname.getText().toString(), et_lastname.getText().toString(), et_age.getText().toString(), et_healthcard.getText().toString(), et_address.getText().toString());
 
                               Intent intent= new Intent(signupActivity.this, loginActivity.class);
                               intent.putExtra("username", et_username.getText().toString());
                               startActivity(intent);
                           }
-
-                          cursor = db.query(
-                                  "entry",   // The table to query
-                                  null,             // The array of columns to return (pass null to get all)
-                                  null,              // The columns for the WHERE clause
-                                  null,          // The values for the WHERE clause
-                                  null,                   // don't group the rows
-                                  null,                   // don't filter by row groups
-                                  null               // The sort order
-                          );
-
                           //deleteRow(new String[]{String.valueOf(et_username.getText().toString())}, db);
                           //clearTable(db);
                           //dropTable(db);
@@ -167,10 +131,6 @@ public class signupActivity extends AppCompatActivity {
     }
 
     public void clearTable(SQLiteDatabase db){
-        //String table = FeedReaderContract.FeedEntry.TABLE_NAME;
-        //String whereClause = BaseColumns._ID+" = ?";
-        //String[] whereArgs = new String[] { BaseColumns._ID };
-        // db.rawQuery("DELETE FROM entry", null);
         db.execSQL("DELETE FROM "+FeedReaderContract.FeedEntry.TABLE_NAME);
     }
 

@@ -1,26 +1,24 @@
 package com.example.easymed;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.SimpleCursorAdapter;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ViewAppointment extends AppCompatActivity {
 
     RecyclerView recyclerView;
     Button back;
+
     RecyclerAdapter adapter;
     String username;
     FeedReaderAppointmentsDbHelper dbAppointmentsHelper;
@@ -28,7 +26,8 @@ public class ViewAppointment extends AppCompatActivity {
 
     ArrayList<String> al_location;
     ArrayList<String> al_doctor;
-    ArrayList<String> al_date;
+    ArrayList<String> al_month;
+    ArrayList<String> al_day;
     ArrayList<String> al_time;
 
     Runnable objRunnable;
@@ -41,7 +40,8 @@ public class ViewAppointment extends AppCompatActivity {
         SQLiteDatabase db = dbAppointmentsHelper.getReadableDatabase();
         al_location = new ArrayList<>();
         al_doctor = new ArrayList<>();
-        al_date = new ArrayList<>();
+        al_month = new ArrayList<>();
+        al_day = new ArrayList<>();
         al_time = new ArrayList<>();
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -77,11 +77,15 @@ public class ViewAppointment extends AppCompatActivity {
                 db.insert(FeedReaderContract.FeedEntryLocations.TABLE_NAME, null, values);
                 */
 
+                String selection = FeedReaderContract.FeedEntryAppointments.COLUMN_NAME_USERNAME + " = ?";
+                String[] selectionArgs = {username};
+
+
                 Cursor cursor = db.query(
                         "appointments",   // The table to query
                         null,             // The array of columns to return (pass null to get all)
-                        null,              // The columns for the WHERE clause
-                        null,          // The values for the WHERE clause
+                        selection,              // The columns for the WHERE clause
+                        selectionArgs,          // The values for the WHERE clause
                         null,                   // don't group the rows
                         null,                   // don't filter by row groups
                         null               // The sort order
@@ -89,15 +93,14 @@ public class ViewAppointment extends AppCompatActivity {
                 while(cursor.moveToNext()){
                     String location = cursor.getString(2);
                     String doctor = cursor.getString(3);
-                    String date = cursor.getString(4);
-                    String time = cursor.getString(5);
+                    String month = cursor.getString(4);
+                    String day = cursor.getString(5);
+                    String time = cursor.getString(6);
                     al_location.add(location);
                     al_doctor.add(doctor);
-                    al_date.add(date);
+                    al_month.add(month);
+                    al_day.add(day);
                     al_time.add(time);
-                    //Log.i("Locations: ", String.valueOf(cursor.getColumnIndexOrThrow(FeedReaderContract.FeedEntryAppointments.COLUMN_NAME_LOCATION)));
-                    Log.i("Locations: ", al_location.toString());
-                    //test.add(name);
                 }
                 cursor.close();
             }
@@ -106,7 +109,7 @@ public class ViewAppointment extends AppCompatActivity {
         objBgThread.start();
 
         //Set adapter
-        adapter = new RecyclerAdapter(ViewAppointment.this, username, al_location, al_doctor, al_date, al_time);
+        adapter = new RecyclerAdapter(ViewAppointment.this, username, al_location, al_doctor, al_month, al_day, al_time);
         recyclerView.setLayoutManager(new LinearLayoutManager(ViewAppointment.this));
         recyclerView.setAdapter(adapter);
 
@@ -115,6 +118,7 @@ public class ViewAppointment extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent_back = new Intent(ViewAppointment.this,MainActivity.class);
+                intent_back.putExtra("username", username);
                 startActivity(intent_back);
             }
         });
@@ -126,11 +130,12 @@ public class ViewAppointment extends AppCompatActivity {
         try {
             al_location = new ArrayList<>();
             al_doctor = new ArrayList<>();
-            al_date = new ArrayList<>();
+            al_month = new ArrayList<>();
+            al_day = new ArrayList<>();
             al_time = new ArrayList<>();
             Thread objBgThread = new Thread(objRunnable);
             objBgThread.start();
-            adapter = new RecyclerAdapter(ViewAppointment.this, username, al_location, al_doctor, al_date, al_time);
+            adapter = new RecyclerAdapter(ViewAppointment.this, username, al_location, al_doctor, al_month, al_day, al_time);
             recyclerView.setLayoutManager(new LinearLayoutManager(ViewAppointment.this));
             recyclerView.setAdapter(adapter);
             // Log.i("asd", arrayList_items.toString());

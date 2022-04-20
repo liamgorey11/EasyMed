@@ -17,6 +17,7 @@ public final class FeedReaderContract {
         public static final String COLUMN_NAME_AGE = "age";
         public static final String COLUMN_NAME_HEALTHCARD = "healthcard";
         public static final String COLUMN_NAME_ADDRESS = "address";
+
     }
     public static class FeedEntryLocations implements BaseColumns {
         public static final String TABLE_NAME = "locations";
@@ -27,8 +28,14 @@ public final class FeedReaderContract {
         public static final String COLUMN_NAME_USERNAME = "username";
         public static final String COLUMN_NAME_LOCATION = "location";
         public static final String COLUMN_NAME_DOCTOR = "doctor";
-        public static final String COLUMN_NAME_DATE = "date";
+        public static final String COLUMN_NAME_MONTH = "month";
+        public static final String COLUMN_NAME_DAY = "day";
         public static final String COLUMN_NAME_TIME = "time";
+    }
+
+    public static class FeedEntryDoctors implements BaseColumns {
+        public static final String TABLE_NAME = "doctors";
+        public static final String COLUMN_NAME_DOCTORNAME = "doctorname";
     }
 }
 

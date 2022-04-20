@@ -12,7 +12,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="#2196F3"
         app:cardCornerRadius="12dp"
         app:cardElevation="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +20,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/purple_200">
 
             <TextView
                 android:id="@+id/textView_Location"
@@ -37,10 +37,10 @@
                 android:id="@+id/textView_Time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="46dp"
+                android:layout_marginStart="76dp"
                 android:layout_marginTop="8dp"
                 android:text="Time"
-                app:layout_constraintStart_toEndOf="@+id/textView_Date"
+                app:layout_constraintStart_toEndOf="@+id/textView_Month"
                 app:layout_constraintTop_toBottomOf="@+id/textView_Appointment" />
 
             <TextView
@@ -50,21 +50,19 @@
                 android:layout_marginStart="123dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="170dp"
-                android:fontFamily="@font/teko"
-                android:text="Appointment"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
+                android:text="appointment"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView_Date"
+                android:id="@+id/textView_Month"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="Date"
+                android:text="Month"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_Appointment" />
 
@@ -74,11 +72,7 @@
                 android:layout_height="36dp"
                 android:layout_marginStart="44dp"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="#4CAF50"
-                android:fontFamily="@font/teko"
                 android:text="Edit"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -88,15 +82,21 @@
                 android:layout_height="36dp"
                 android:layout_marginEnd="43dp"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="#A61111"
-                android:fontFamily="@font/teko"
                 android:text="Delete"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.94"
                 app:layout_constraintStart_toEndOf="@+id/btn_edit" />
+
+            <TextView
+                android:id="@+id/textView_Day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Day"
+                app:layout_constraintStart_toEndOf="@+id/textView_Month"
+                app:layout_constraintTop_toBottomOf="@+id/textView_Appointment" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

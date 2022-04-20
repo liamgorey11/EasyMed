@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent_view = new Intent(MainActivity.this, ViewAppointment.class);
+                intent_view.putExtra("username", username);
                 startActivity(intent_view);
             }
         });
